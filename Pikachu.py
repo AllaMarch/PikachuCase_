@@ -1,12 +1,13 @@
-import pandas as pd; import matplotlib.pyplot as plt
-import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
 import numpy as np
-from pandas import Series
-from scipy.cluster.vq import kmeans, vq, whiten
-from scipy.cluster.hierarchy import dendrogram, linkage
-from sklearn.cluster import KMeans
 
-## Themes for plots
-from jupyterthemes import jtplot
-# onedork | grade3 | oceans16 | chesterish | monokai | solarizedl | solarizedd
-jtplot.style(theme='grade3')
+
+data = pd.read_csv('Pikachu.csv', sep=';', header = 0)
+data.describe()
+data.info()
+data.Person = data.Person.astype('category')
+data.Pockemon = data.Pockemon.astype('category')
+data.info()
+
+data.sample()
